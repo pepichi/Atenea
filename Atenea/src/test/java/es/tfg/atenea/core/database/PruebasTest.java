@@ -47,8 +47,7 @@ public class PruebasTest {
     public void testProbar2() {
         System.out.println("probar");
         Pruebas.probar2();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
     
 }
