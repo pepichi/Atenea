@@ -4,6 +4,7 @@ import es.tfg.atenea.core.constants.Atributos;
 import es.tfg.atenea.core.constants.Parametros;
 import es.tfg.atenea.core.constants.Redirecciones;
 import es.tfg.atenea.core.database.DataBaseHelper;
+import es.tfg.atenea.core.helper.LogHelper;
 import es.tfg.atenea.core.objets.Interno;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -18,7 +19,9 @@ import java.sql.SQLException;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Servlet/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
-    private static final String errorMensajeAutenticacion = "El usuario o la contraseña son incorrectos";
+    private static final String ERROR_MENSAJE_AUTENTICACION = "El usuario o la contraseña son incorrectos para usuario:%s, contraseña:%s";
+    private static final String MENSAJE_AUTENTICACION_CORRECTA = "El usuario: %s, se ha autenticado correctamente";
+    private static final String MENSAJE_AVISO_AUTENTICACION = "El usuario: %s, NO se ha autenticado correctamente";
     private static final String CODIGO_ERROR_NO_AUTORIZADO = "01";
 
     @Override
@@ -29,15 +32,17 @@ public class LoginServlet extends HttpServlet {
         try (Connection conexion = DataBaseHelper.getConexionNoTransacional()) {
             BigDecimal idUsuario = UsuarioHelper.getUsuarioAutenticado(conexion, nombreUsuario, password);
             if (idUsuario != null) {
+                LogHelper.anotarInfoLog(String.format(MENSAJE_AUTENTICACION_CORRECTA, nombreUsuario), idUsuario);
                 Interno interno = new Interno();
                 interno.setUsuario(UsuarioHelper.getUsuario(conexion, idUsuario));
                 request.setAttribute(Atributos.INTERNO, interno);
                 response.sendRedirect(Redirecciones.FRONTAL);
                 return;
             }
+            LogHelper.anotarWarningLog(String.format(MENSAJE_AVISO_AUTENTICACION, nombreUsuario));
             response.sendRedirect(Redirecciones.LOGIN + "?" + Parametros.MENSAJE + "=" + CODIGO_ERROR_NO_AUTORIZADO);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            LogHelper.anotarExcepcionLog(String.format(ERROR_MENSAJE_AUTENTICACION, nombreUsuario, password), ex);
         }
 
     }
