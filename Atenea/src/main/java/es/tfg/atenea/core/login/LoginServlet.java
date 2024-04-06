@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Servlet/LoginServlet"})
 public class LoginServlet extends HttpServlet {
@@ -41,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             }
             LogHelper.anotarWarningLog(String.format(MENSAJE_AVISO_AUTENTICACION, nombreUsuario));
             response.sendRedirect(Redirecciones.LOGIN + "?" + Parametros.MENSAJE + "=" + CODIGO_ERROR_NO_AUTORIZADO);
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             LogHelper.anotarExcepcionLog(String.format(ERROR_MENSAJE_AUTENTICACION, nombreUsuario, password), ex);
         }
 

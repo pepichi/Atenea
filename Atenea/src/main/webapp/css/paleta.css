@@ -1,0 +1,23 @@
+.centrado{
+    text-align: center
+}
+
+.botonCentrado{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+}
+
+.boton{
+    font-size: 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover{
+    background-color: #0056b3;
+}

@@ -1,8 +1,14 @@
 var app = angular.module('app', []);
 
-app.controller('LoginCtrl', ['$scope', '$http', function ($scope, $http){
-        
-}]);
+app.controller('menuController', function ($scope, $http, $window) {
+    $http.post('/Atenea/Servlet/ProcedimientoServlet').then(function (response) {
+        $scope.entradasMenu = response.data;
+    });
+    
+    $scope.redirigir = function(url){
+        $window.location.href = url;
+    };
+});
 
 
 

@@ -26,6 +26,10 @@ public class LogHelper {
 
     }
 
+    public static void anotarExcepcionLog(Exception excepcion) {
+        anotarLog(null, excepcion, null, null, Nivel.SEVERE);
+    }
+
     public static void anotarExcepcionLog(String mensaje, Exception excepcion) {
         anotarLog(mensaje, excepcion, null, null, Nivel.SEVERE);
     }
@@ -51,13 +55,12 @@ public class LogHelper {
             ex.printStackTrace();
         }
     }
-    
-    
-    private static String getStringLog(String mensaje, int maximo){
-        if(mensaje == null){
+
+    private static String getStringLog(String mensaje, int maximo) {
+        if (mensaje == null) {
             return null;
         }
-        return mensaje.length()> maximo ? mensaje.substring(1, maximo) : mensaje;
+        return mensaje.length() > maximo ? mensaje.substring(1, maximo) : mensaje;
     }
 
 }
