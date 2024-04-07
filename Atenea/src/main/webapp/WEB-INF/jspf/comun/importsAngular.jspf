@@ -1,1 +1,11 @@
 <script src = "/Atenea/js/angular/angular.min.js"></script>
+<script src = "/Atenea/js/angular/angular-sanitize.min.js"></script>
+<script src = "/Atenea/js/angular/rangy-core.min.js"></script>
+<script src = "/Atenea/js/angular/textAngular-rangy.min.js"></script>
+<script src = "/Atenea/js/angular/textAngular-sanitize.min.js"></script>
+<script src = "/Atenea/js/angular/textAngular.min.js"></script>
+<script src = "/Atenea/js/angular/workaroundlowercase.js"></script>
+<link rel="stylesheet" href="/Atenea/css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+

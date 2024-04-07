@@ -4,13 +4,6 @@
  */
 package es.tfg.atenea.core.database;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  *
  * @author Pepichi
@@ -44,7 +37,7 @@ public class PruebasTest {
      * Test of probar method, of class Pruebas.
      */
     @org.junit.jupiter.api.Test
-    public void testProbar2() {
+    void testProbar2() {
         System.out.println("probar");
         Pruebas.probar2();
 

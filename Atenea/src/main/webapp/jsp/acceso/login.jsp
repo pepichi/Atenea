@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
     <form action="/Atenea/Servlet/LoginServlet" method="post" ua-error="error-msg">
         <input name="nombreUsuario" placeholder="Nombre de usuario" required><br>
         <input name="password" placeholder="Contraseña" type="password" required><br>
