@@ -29,6 +29,12 @@ public class Pregunta {
         fechaInsercion = ORMHelper.getGregorianCalendar(rs,Columnas.FECHA_INSERCION.name());
         activada = rs.getBoolean(Columnas.ACTIVADA.name());
     }
+    
+    public Pregunta(String enunciado, String comentario, String fuente){
+        this.enunciado = enunciado;
+        this.comentarios = comentario;
+        this.fuentePregunta = fuente;
+    }
 
     public BigDecimal getIdPregunta() {
         return idPregunta;

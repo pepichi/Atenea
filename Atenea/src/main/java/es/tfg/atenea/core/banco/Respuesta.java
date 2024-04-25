@@ -27,6 +27,12 @@ public class Respuesta {
         correcta = rs.getBoolean(Columnas.CORRECTA.name());
         fechaInsercion = ORMHelper.getGregorianCalendar(rs, Columnas.FECHA_INSERCION.name());
     }
+    
+    public Respuesta(String respuesta, String feedback, boolean esCorrecta){
+        this.respuesta = respuesta;
+        this.feedback = feedback;
+        this.correcta = esCorrecta;
+    }
 
     public BigDecimal getIdRespuesta() {
         return idRespuesta;

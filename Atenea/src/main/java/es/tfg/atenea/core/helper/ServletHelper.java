@@ -11,6 +11,11 @@ public class ServletHelper {
     private ServletHelper() {
 
     }
+    
+    public static void responderMensajeError(String mensaje, String mensajeUsuario, Exception ex, HttpServletResponse response){
+        LogHelper.anotarExcepcionLog(mensaje, ex);
+        responseObjectSafe(mensajeUsuario, response);
+    }
 
     public static void responseObject(Object objeto, HttpServletResponse response) throws IOException {
         response.setContentType(MediaType.APPLICATION_JSON);

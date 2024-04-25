@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.util.List;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,7 +39,7 @@ public class CategoriaHelperTest {
         System.out.println("getCategoriasDisponibles");
         try (Connection conexion = DataBaseHelper.getConexionNoTransacional()) {
             List<Categoria> result = CategoriaHelper.getCategoriasDisponibles(conexion);
-            assertTrue(result.isEmpty());
+            assertFalse(result.isEmpty());
         }
     }
     
