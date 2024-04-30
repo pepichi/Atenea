@@ -1,5 +1,6 @@
-package es.tfg.atenea.core.banco;
+package es.tfg.atenea.core.categoria;
 
+import es.tfg.atenea.core.categoria.CategoriaHelper;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.ServletException;

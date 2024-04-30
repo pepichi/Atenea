@@ -1,5 +1,6 @@
 package es.tfg.atenea.core.banco;
 
+import es.tfg.atenea.core.categoria.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
