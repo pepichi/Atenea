@@ -1,9 +1,13 @@
 package es.tfg.atenea.core.helper;
 
 import com.google.gson.Gson;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.core.MediaType;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 
 public class ServletHelper {
@@ -11,8 +15,8 @@ public class ServletHelper {
     private ServletHelper() {
 
     }
-    
-    public static void responderMensajeError(String mensaje, String mensajeUsuario, Exception ex, HttpServletResponse response){
+
+    public static void responderMensajeError(String mensaje, String mensajeUsuario, Exception ex, HttpServletResponse response) {
         LogHelper.anotarExcepcionLog(mensaje, ex);
         responseObjectSafe(mensajeUsuario, response);
     }
@@ -23,7 +27,7 @@ public class ServletHelper {
         response.getWriter().write(new Gson().toJson(objeto));
     }
 
-    public static void responseObjectSafe(Object objeto, HttpServletResponse response){
+    public static void responseObjectSafe(Object objeto, HttpServletResponse response) {
         try {
             response.setContentType(MediaType.APPLICATION_JSON);
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
@@ -31,5 +35,24 @@ public class ServletHelper {
         } catch (IOException ex) {
             LogHelper.anotarExcepcionLog(ex);
         }
+    }
+
+    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo) throws IOException {
+        return new Gson().fromJson(getJsonFromRequest(request), tipo);
+    }
+    
+    public static <T> T getRequestObject(HttpServletRequest request, Type tipo)throws IOException{
+        return new Gson().fromJson(getJsonFromRequest(request), tipo);
+    }
+    
+    private static String getJsonFromRequest(HttpServletRequest request)throws IOException{
+        StringBuilder jsonBody = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                jsonBody.append(line);
+            }
+        }
+        return jsonBody.toString();
     }
 }

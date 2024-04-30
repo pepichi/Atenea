@@ -1,5 +1,7 @@
 package es.tfg.atenea.core.banco;
 
+import es.tfg.atenea.core.categoria.CategoriaHelper;
+import es.tfg.atenea.core.categoria.Categoria;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import java.sql.Connection;
 import java.util.List;

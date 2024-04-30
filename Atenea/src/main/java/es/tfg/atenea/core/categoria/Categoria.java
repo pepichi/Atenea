@@ -1,4 +1,4 @@
-package es.tfg.atenea.core.banco;
+package es.tfg.atenea.core.categoria;
 
 import es.tfg.atenea.core.helper.ORMHelper;
 import java.math.BigDecimal;
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 public class Categoria {
     
     private enum Columnas{
-        DESCRIPCION, FECHA_INSERCION, ID_CATETORIA,NOMBRE
+        DESCRIPCION, FECHA_INSERCION, ID_CATEGORIA,NOMBRE
     }
     
     private BigDecimal idCategoria;
@@ -18,7 +18,7 @@ public class Categoria {
     private GregorianCalendar fechaInsercion;
     
     public Categoria(ResultSet rs)throws SQLException{
-        idCategoria = rs.getBigDecimal(Columnas.ID_CATETORIA.name());
+        idCategoria = rs.getBigDecimal(Columnas.ID_CATEGORIA.name());
         nombre = rs.getString(Columnas.NOMBRE.name());
         descripcion = rs.getString(Columnas.DESCRIPCION.name());
         fechaInsercion = ORMHelper.getGregorianCalendar(rs, Columnas.FECHA_INSERCION.name());
