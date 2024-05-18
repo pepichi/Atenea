@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="app">
+<html lang="es" ng-app="menuApp">
     <head>
         <%@include file="/WEB-INF/jspf/comun/configuracionPagina.jspf"%>
         <%@include file="/WEB-INF/jspf/comun/importsAngular.jspf"%>
-        <script src="/Atenea/js/angular/controladores/app.js"></script>
+        <script src="/Atenea/js/angular/controladores/menu.js"></script>
         <link rel="stylesheet" href="/Atenea/css/paleta.css">
     </head>
     <body>

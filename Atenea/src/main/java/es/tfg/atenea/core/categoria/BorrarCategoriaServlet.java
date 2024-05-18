@@ -20,8 +20,11 @@ import java.util.List;
  *
  * @author Pepichi
  */
+
+
 @WebServlet(name = "BorrarCategoriaServlet", urlPatterns = {"/Servlet/BorrarCategoriaServlet"})
 public class BorrarCategoriaServlet  extends HttpServlet {
+    private static final String ERROR_BORRANDO_CATEGORIAS = "Se ha producido un error borrando las categorías";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,7 +33,7 @@ public class BorrarCategoriaServlet  extends HttpServlet {
             CategoriaHelper.borrarCategorias(conexion, categorias);
             ServletHelper.responseObject(categorias, response);
         } catch (Exception ex) {
-            ServletHelper.responderMensajeError("", "", ex, response);
+            ServletHelper.responderMensajeError(ERROR_BORRANDO_CATEGORIAS, ERROR_BORRANDO_CATEGORIAS, ex, response);
         }
     }
 }

@@ -8,6 +8,12 @@
     margin-top: 1%;
 }
 
+.panelCentrado{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+}
+
 .boton{
     font-size: 20px;
     color: #fff;
@@ -20,4 +26,88 @@
 
 .boton:hover{
     background-color: #0056b3;
+}
+
+
+.panel {
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.panel-header {
+    background-color: #007bff;
+    padding: 10px;
+}
+
+.panel-body {
+    padding: 10px;
+    display: none;
+}
+
+.panel-body.ng-show-add, .panel-body.ng-hide-remove {
+    transition: all linear 0.5s;
+}
+
+.active .panel-body {
+    display: block;
+}
+
+.contenedorElementoConfiguracionExamen{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+}
+
+.categoriaContainer{
+    width: 70%;
+    margin-left: 15%;
+}
+
+.elementoLista{
+    list-style-type: none;
+    text-align: left;
+    background-color: aliceblue;
+}
+
+.lineaHorizontal80{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.botoneraConfiguracionExamen{
+    width: 60%;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 20%;
+    position: relative;
+    bottom: 5%;
+}
+
+.botonConfiguracionExamen{
+    background-color: #007bff;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.warningImage{
+    margin-top: 15px;
+    width: 40px;
+    float: left;
+}
+
+.alerta{
+    background-color: rgba(254,239,179, 0.3);
+}
+
+.notificacionTexto{
+    background-color: rgba(135,206,250, 0.3);
+    font-size: 20px;
 }
