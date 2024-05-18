@@ -1,33 +1,13 @@
-var app = angular.module('app', ['textAngular', 'ngSanitize']);
+var gestionPreguntas = angular.module('gestionPreguntas', ['textAngular', 'ngSanitize', 'listaCategoriasApp']);
 
-app.controller('menuController', function ($scope, $http, $window) {
-    $http.post('/Atenea/Servlet/ProcedimientoServlet').then(function (response) {
-        $scope.entradasMenu = response.data;
-    });
 
-    $scope.redirigir = function (url) {
-        $window.location.href = url;
-    };
-});
 
-app.controller('controladorEnunciadoPregunta', function ($scope, $http, $httpParamSerializerJQLike) {
+gestionPreguntas.controller('controladorEnunciadoPregunta', function ($scope, $http) {
     $scope.enunciado = '<p>Escribe aquí, <strong>el enunciado de la pregunta</strong>!</p>';
     $scope.numeroRespuestas = 1;
     $scope.respuestas = [{respuesta: '',esCorrecta: false, feedback: ''}];
     $scope.comentario = '';
     $scope.fuente = '';
-    $scope.categoriasNoSeleccionadas = [];
-    $scope.categoriasSeleccionadas = [];
-
-    $scope.moverADerecha = function (index) {
-        var item = $scope.categoriasNoSeleccionadas.splice(index, 1)[0];
-        $scope.categoriasSeleccionadas.push(item);
-    };
-
-    $scope.moverAIzquierda = function (index) {
-        var item = $scope.categoriasSeleccionadas.splice(index, 1)[0];
-        $scope.categoriasNoSeleccionadas.push(item);
-    };
 
     $scope.incrementarNumeroRespuestas = function () {
         $scope.numeroRespuestas++;
@@ -47,15 +27,6 @@ app.controller('controladorEnunciadoPregunta', function ($scope, $http, $httpPar
             }
         }
     };
-    $http({
-        method: 'POST',
-        url: '/Atenea/Servlet/ListadoCategoriaServlet',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(function (response) {
-        $scope.categoriasNoSeleccionadas = response.data;
-    });
 
     $scope.validar = function () {
         let valido = true;

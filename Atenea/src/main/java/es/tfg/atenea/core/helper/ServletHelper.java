@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import org.json.JSONObject;
 
 public class ServletHelper {
 
@@ -43,6 +44,10 @@ public class ServletHelper {
     
     public static <T> T getRequestObject(HttpServletRequest request, Type tipo)throws IOException{
         return new Gson().fromJson(getJsonFromRequest(request), tipo);
+    }
+    
+    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo, String nombreParametro)throws IOException{
+        return tipo.cast(new JSONObject(getJsonFromRequest(request)).get(nombreParametro));
     }
     
     private static String getJsonFromRequest(HttpServletRequest request)throws IOException{

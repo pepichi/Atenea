@@ -6,7 +6,14 @@
 <script src = "/Atenea/js/angular/textAngular.min.js"></script>
 <script src = "/Atenea/js/angular/workaroundlowercase.js"></script>
 <script src = "/Atenea/js/angular/angular-touch.min.js"></script>
+<script src = "/Atenea/js/angular/angular-animate.min.js"></script>
+<script src = "/Atenea/js/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src = "/Atenea/js/angular/ngDialog.js"></script>
+<script src = "/Atenea/js/helper/ngDialogHelper.js"></script>
 <link rel="stylesheet" href="/Atenea/css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="/Atenea/css/ngDialog/ngDialog.min.css">
+<link rel="stylesheet" href="/Atenea/css/ngDialog/ngDialog-theme-default.min.css">
+
 
 

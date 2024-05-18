@@ -20,6 +20,8 @@ import java.sql.Connection;
  */
 @WebServlet(name = "ActualizarCategoriaServlet", urlPatterns = {"/Servlet/ActualizarCategoriaServlet"})
 public class ActualizarCategoriaServlet extends HttpServlet {
+    
+    private static final String ERROR_ACTUALIZANDO_INSERTANDO_CATEGORIA = "Se ha producido un error insertando/actualizando la categoría";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -28,7 +30,7 @@ public class ActualizarCategoriaServlet extends HttpServlet {
         try (Connection conexion = DataBaseHelper.getConexionNoTransacional()) {
             ServletHelper.responseObject(CategoriaHelper.insertaOActualizaCategoria(conexion, categoria), response);
         } catch (Exception ex) {
-            ServletHelper.responderMensajeError("", "", ex, response);
+            ServletHelper.responderMensajeError(ERROR_ACTUALIZANDO_INSERTANDO_CATEGORIA, ERROR_ACTUALIZANDO_INSERTANDO_CATEGORIA, ex, response);
         }
 
     }
