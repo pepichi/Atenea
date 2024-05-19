@@ -113,7 +113,7 @@ angular.module('configuracionExamen').controller('AcordeonCtrl', function ($scop
                 mostrarVentanaConfirmacion(ngDialog, 'Se ha guardado correctamente la configuración de examen');
                 $scope.ventanaConfirmacion.close();
             } else {
-                mostrarVentanaAviso(ngDialog, 'Ha ocurrido un error al realizar el guardado de la configuración:' + response);
+                mostrarVentanaAviso(ngDialog, 'Ha ocurrido un error al realizar el guardado de la configuración:' + response.data);
             }
         });
     };

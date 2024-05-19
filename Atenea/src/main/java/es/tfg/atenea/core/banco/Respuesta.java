@@ -18,6 +18,11 @@ public class Respuesta {
     private String feedback;
     private boolean correcta;
     private GregorianCalendar fechaInsercion;
+    private String enumerador;
+    
+    public Respuesta(){
+        
+    }
     
     public Respuesta(ResultSet rs)throws SQLException{
         idRespuesta = rs.getBigDecimal(Columnas.ID_RESPUESTA.name());
@@ -81,5 +86,14 @@ public class Respuesta {
     public void setFechaInsercion(GregorianCalendar fechaInsercion) {
         this.fechaInsercion = fechaInsercion;
     }
+
+    public String getEnumerador() {
+        return enumerador;
+    }
+
+    public void setEnumerador(String enumerador) {
+        this.enumerador = enumerador;
+    }
+    
     
 }

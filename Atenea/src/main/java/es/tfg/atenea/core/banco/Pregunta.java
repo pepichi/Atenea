@@ -21,6 +21,10 @@ public class Pregunta {
     private GregorianCalendar fechaInsercion;
     private boolean activada;
     
+    public Pregunta(){
+        
+    }
+    
     public Pregunta(ResultSet rs)throws SQLException{
         idPregunta = rs.getBigDecimal(Columnas.ID_PREGUNTA.name());
         enunciado = rs.getString(Columnas.ENUNCIADO.name());

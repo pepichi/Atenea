@@ -1,8 +1,10 @@
 package es.tfg.atenea.core.helper;
 
 import com.google.gson.Gson;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import jakarta.ws.rs.core.MediaType;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,16 +43,23 @@ public class ServletHelper {
     public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo) throws IOException {
         return new Gson().fromJson(getJsonFromRequest(request), tipo);
     }
-    
-    public static <T> T getRequestObject(HttpServletRequest request, Type tipo)throws IOException{
+
+    public static <T> T getRequestObject(HttpServletRequest request, Type tipo) throws IOException {
         return new Gson().fromJson(getJsonFromRequest(request), tipo);
     }
-    
-    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo, String nombreParametro)throws IOException{
+
+    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo, String nombreParametro) throws IOException {
         return tipo.cast(new JSONObject(getJsonFromRequest(request)).get(nombreParametro));
     }
-    
-    private static String getJsonFromRequest(HttpServletRequest request)throws IOException{
+
+    public static <T> T getObjectFromPart(HttpServletRequest request, Class<T> tipo, String nombreParte) throws IOException, ServletException {
+        Part datosPart = request.getPart(nombreParte);
+        byte[] datos = datosPart.getInputStream().readAllBytes();
+        String datosJson = new String(datos);
+        return new Gson().fromJson(datosJson, tipo);
+    }
+
+    private static String getJsonFromRequest(HttpServletRequest request) throws IOException {
         StringBuilder jsonBody = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));) {
             String line;
