@@ -33,9 +33,11 @@ public class InsertarPreguntaBancoServlet extends HttpServlet {
         }
         JSONObject jsonObject = new JSONObject(jsonBody.toString());
         try (Connection conexion = DataBaseHelper.getConexionTransacional()) {
-            BigDecimal idPregunta = InsertarPreguntaBancoHelper.insertarEnunciado(conexion, new Pregunta((String) jsonObject.get(Parametros.ENUNCIADO), null, null));
-            InsertarPreguntaBancoHelper.insertarCategorias(conexion, idPregunta, getIdsCategoriasSeleccionadas(jsonObject));
-            InsertarPreguntaBancoHelper.insertarRespuestas(conexion, idPregunta, getRespuestas(jsonObject));
+            InsertarPreguntaBancoHelper.insertarPreguntaYRespuestas(
+                    conexion, 
+                    new Pregunta((String) jsonObject.get(Parametros.ENUNCIADO), null, null), 
+                    getIdsCategoriasSeleccionadas(jsonObject), 
+                    getRespuestas(jsonObject));
             conexion.commit();
         } catch (Exception ex) {
             LogHelper.anotarExcepcionLog("Error al parsear la llamada a guardar la pregunta con sus respuestas.", ex);
