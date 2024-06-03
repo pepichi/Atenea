@@ -42,7 +42,7 @@ public class ConfiguracionExamen {
         tiempo = rs.getInt(Columnas.LIMITE_TIEMPO.name());
         mostrarTiempo = rs.getBoolean(Columnas.MOSTRAR_TIEMPO.name());
         mostrarFeedback = rs.getBoolean(Columnas.MOSTRAR_FEEDBACK.name());
-        mostrarInmediatamente = rs.getBoolean(Columnas.MOSTRAR_FEEDBACK.name());
+        mostrarInmediatamente = rs.getBoolean(Columnas.MOSTRAR_INMEDIATAMENTE.name());
         usarTodasCategorias = rs.getBoolean(Columnas.USAR_TODAS_CATEGORIAS.name());
         categoriasSeleccionadasMismoPeso = rs.getBoolean(Columnas.CATEGORIAS_SELECCIONADAS_MISMO_PESO.name());
     }

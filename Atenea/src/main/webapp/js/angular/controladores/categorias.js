@@ -23,7 +23,6 @@ angular.module('categoria').controller('categoriaController', function ($scope, 
     });
     $scope.saveRow = function (rowEntity) {
         let indice = $scope.gridOptions.data.indexOf(rowEntity);
-        alert(indice);
         var deferred = $q.defer();
         var promise = $http({
             method: 'POST',

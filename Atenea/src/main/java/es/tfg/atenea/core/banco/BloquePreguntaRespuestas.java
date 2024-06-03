@@ -13,6 +13,15 @@ import java.util.List;
  */
 public class BloquePreguntaRespuestas {
     
+    public BloquePreguntaRespuestas(Pregunta pregunta, List<Respuesta> respuestas){
+        this.pregunta = pregunta;
+        this.respuestas = respuestas;
+    }
+    
+    public BloquePreguntaRespuestas(){
+        
+    }
+    
     private Pregunta pregunta;
     private List<Respuesta> respuestas; 
 
