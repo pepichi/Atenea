@@ -7,7 +7,6 @@
 <script src = "/Atenea/js/angular/workaroundlowercase.js"></script>
 <script src = "/Atenea/js/angular/angular-touch.min.js"></script>
 <script src = "/Atenea/js/angular/angular-animate.min.js"></script>
-<script src = "/Atenea/js/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <script src = "/Atenea/js/angular/ngDialog.js"></script>
 <script src = "/Atenea/js/helper/ngDialogHelper.js"></script>
 <link rel="stylesheet" href="/Atenea/css/bootstrap/bootstrap.min.css">

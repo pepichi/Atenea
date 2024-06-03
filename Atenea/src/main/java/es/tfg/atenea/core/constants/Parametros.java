@@ -14,4 +14,5 @@ public class Parametros {
     public static final String RESPUESTAS_CORRECTAS = "respuestasCorrectas";
     public static final String CATEGORIAS_SELECCIONADAS = "categoriasSeleccionadas";
     public static final String NOMBRE_CONFIGURACION = "nombreConfiguracion";
+    public static final String CONFIGURACION = "configuracion";
 }

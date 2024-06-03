@@ -10,6 +10,7 @@
     <head>
         <%@include file="/WEB-INF/jspf/comun/configuracionPagina.jspf"%>
         <%@include file="/WEB-INF/jspf/comun/importsAngular.jspf"%>
+        <script src = "/Atenea/js/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
         <script src="/Atenea/js/angular/controladores/listaCategorias.js"></script>
         <script src="/Atenea/js/angular/controladores/configuracionExamen.js"></script>
         <link rel="stylesheet" href="/Atenea/css/paleta.css">

@@ -7,21 +7,28 @@ import java.sql.SQLException;
 import java.util.GregorianCalendar;
 
 public class Categoria {
-    
-    private enum Columnas{
-        DESCRIPCION, FECHA_INSERCION, ID_CATEGORIA,NOMBRE
+
+    private enum Columnas {
+        DESCRIPCION, FECHA_INSERCION, ID_CATEGORIA, NOMBRE
     }
-    
+
     private BigDecimal idCategoria;
     private String nombre;
     private String descripcion;
     private GregorianCalendar fechaInsercion;
-    
-    public Categoria(ResultSet rs)throws SQLException{
+
+    public Categoria(ResultSet rs) throws SQLException {
         idCategoria = rs.getBigDecimal(Columnas.ID_CATEGORIA.name());
         nombre = rs.getString(Columnas.NOMBRE.name());
         descripcion = rs.getString(Columnas.DESCRIPCION.name());
         fechaInsercion = ORMHelper.getGregorianCalendar(rs, Columnas.FECHA_INSERCION.name());
+    }
+
+    public Categoria(Categoria categoria) {
+        idCategoria = categoria.getIdCategoria();
+        nombre = categoria.getNombre();
+        descripcion = categoria.getDescripcion();
+        fechaInsercion = categoria.getFechaInsercion();
     }
 
     public BigDecimal getIdCategoria() {

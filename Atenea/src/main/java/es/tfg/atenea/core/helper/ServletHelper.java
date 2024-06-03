@@ -48,7 +48,7 @@ public class ServletHelper {
         return new Gson().fromJson(getJsonFromRequest(request), tipo);
     }
 
-    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo, String nombreParametro) throws IOException {
+    public static <T> T getRequestObject(HttpServletRequest request, Class<T> tipo, String nombreParametro) throws IOException {        
         return tipo.cast(new JSONObject(getJsonFromRequest(request)).get(nombreParametro));
     }
 
