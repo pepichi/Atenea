@@ -21,6 +21,20 @@
     </head>
     <body ng-controller="seleccionTipoExamenCtrl">
         <h1 class="h1MetodoImportacion">Simulación de examen</h1>
+        <div id="insigniasId" class="gamificacion" >
+            <div ng-show="existeTrofeo" style="display: grid">
+                <div class="insigniaCircular">
+                    <img src="/Atenea/imagenes/trofeo.png" alt="imagen de un trofeo obtenido con el uso de la aplicación" width="125px">
+                </div>
+                <span>{{datosGamificacion.trofeo.nombre}}</span>
+                <span>Nivel: {{datosGamificacion.nivel}}</span>
+            </div>
+            <div ng-show="!existeTrofeo" style="display: grid">
+                <img src="/Atenea/imagenes/caraTriste.png" alt="imagen de una cara triste" width="125px">
+                <span>Sin trofeos</span>
+                <span>Nivel: {{datosGamificacion.nivel}}</span>
+            </div>
+        </div>
         <div id="seleccionConfiguracionContainerId">
             <fieldset class="categoriaContainer centrado">
                 <legend>Tipo de configuración</legend>
@@ -57,8 +71,12 @@
             </div>
             <div style="height: 70px"></div>
         </div>
-        <div ng-show="inicioExamen" class="botoneraExamen" >
+        <div ng-show="inicioExamen" class="botoneraExamen" id="botoneraFinalizarExamenId">
             <button class="botonConfiguracionExamen" ng-click="finalizarExamen()">Finalizar examen</button>
+        </div>
+        <div class="botoneraExamen" id="botoneraEstadisticaId" style="display: none">
+            <button class="botonConfiguracionExamen" ng-click="irAMenu()">Volver</button>
+            <button class="botonConfiguracionExamen" ng-click="mostrarEstadisticas()">Ver estadísticas</button>
         </div>
     </body>
 </html>

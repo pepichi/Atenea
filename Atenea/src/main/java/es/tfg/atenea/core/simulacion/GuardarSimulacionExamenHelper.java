@@ -51,5 +51,15 @@ public class GuardarSimulacionExamenHelper {
             pst.executeBatch();
         }
     }
+    
+    public static SimulacionExamen getSimulacionExamen(Connection conexion, BigDecimal idSimulacion)throws SQLException{
+        String sql = "  SELECT * FROM simulacion_examen WHERE id_simulacion_examen = ? ";
+        try(PreparedStatement pst = conexion.prepareStatement(sql)){
+            pst.setBigDecimal(1, idSimulacion);
+            try(ResultSet rs = pst.executeQuery()){
+                return rs.next() ? new SimulacionExamen(rs) : null;
+            }
+        }
+    }
 
 }

@@ -5,7 +5,6 @@
  */
 package es.tfg.atenea.core.simulacion;
 
-import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.ServletException;
@@ -33,8 +32,10 @@ public class GuardarResultadosSimulacionServlet extends HttpServlet {
         try (Connection conexion = DataBaseHelper.getConexionTransacional()) {
             BigDecimal idSimulacion = GuardarSimulacionExamenHelper.guardarSimulacionRealizada(conexion, resultado);
             GuardarSimulacionExamenHelper.guardarPreguntasEnSimulacion(conexion, idSimulacion, resultado);
-            ServletHelper.responseObject(ResponseTypes.CORRECTO, response);
+            LogrosSimulacion logros = LogrosSimulacionHelper.getLogrosObtenidos(conexion, idSimulacion);
             conexion.commit();
+            ServletHelper.responseObject(logros, response);
+            
         } catch (Exception ex) {
             ServletHelper.responderMensajeError(ERROR_GUARDANDO_EXAMEN, ERROR_GUARDANDO_EXAMEN, ex, response);
         }

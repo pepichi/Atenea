@@ -7,7 +7,7 @@ const CORRECTO = 'CORRECTO';
 var app = angular.module('simulacionExamenApp', ['ngDialog', 'ngDialogHelper']);
 
 
-app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
+app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ngDialog) {
     $scope.configuracionSeleccionada = '';
     $scope.configuraciones = [];
     $scope.cargandoSimulacion = false;
@@ -20,6 +20,9 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
     $scope.finExamen = false;
     $scope.avisoColorIntermedio = 29;
     $scope.avisoFinal = 28;
+    $scope.datosGamificacion = null;
+    $scope.existeTrofeo = false;
+    $scope.estadisticas = null;
 
     $http({
         method: 'POST',
@@ -34,6 +37,18 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
             $('select').selectpicker("render");
         });
     });
+
+    $http({
+        method: 'POST',
+        url: '/Atenea/Servlet/GamificacionServlet',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response) {
+        $scope.datosGamificacion = response.data;
+        $scope.existeTrofeo = 'trofeo' in response.data;
+    });
+
     $scope.getConfiguracionSeleccionada = function () {
         for (var i = 0; i < $scope.configuraciones.length; i++) {
             if ($scope.configuraciones[i].idConfiguracionExamen === $scope.configuracionSeleccionada[0]) {
@@ -201,7 +216,7 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
     ;
 
     $scope.finalizarExamen = function () {
-        let tiempoEmpleado =  Math.floor((new Date().getTime() - $scope.tiempoInicioExamen.getTime()) / 1000);
+        let tiempoEmpleado = Math.floor((new Date().getTime() - $scope.tiempoInicioExamen.getTime()) / 1000);
         document.getElementById('bloqueoExamenId').style.display = 'block';
         $scope.finExamen = true;
         for (var i = 0; i < $scope.examen.length; i++) {
@@ -224,7 +239,9 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
-            alert('guardado correcto');
+            document.getElementById('botoneraFinalizarExamenId').style.display = 'none';
+            document.getElementById('botoneraEstadisticaId').style.display = 'block';
+            $scope.estadisticas = response.data;
         });
     };
 
@@ -238,8 +255,17 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval) {
             }
         }
     };
-
-
+    $scope.irAMenu = function () {
+        window.location.href = '/Atenea/jsp/menu/frontal.jsp';
+    };
+    $scope.mostrarEstadisticas = function () {
+        $scope.ventanaConfirmacion = ngDialog.open({
+            template: '/Atenea/jsp/examen/estadisticasSimulacion.jsp',
+            cache: false,
+            height: '400px',
+            width: '600px',
+            scope: $scope});
+    };
 
 
 
