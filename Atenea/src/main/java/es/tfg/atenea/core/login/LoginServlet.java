@@ -5,7 +5,7 @@ import es.tfg.atenea.core.constants.Parametros;
 import es.tfg.atenea.core.constants.Redirecciones;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.LogHelper;
-import es.tfg.atenea.core.objets.Interno;
+import es.tfg.atenea.core.objetcs.Interno;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

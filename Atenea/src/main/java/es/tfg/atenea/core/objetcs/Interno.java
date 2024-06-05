@@ -1,4 +1,4 @@
-package es.tfg.atenea.core.objets;
+package es.tfg.atenea.core.objetcs;
 
 import es.tfg.atenea.core.login.Usuario;
 
@@ -13,7 +13,5 @@ public class Interno {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    
     
 }

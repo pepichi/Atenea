@@ -17,4 +17,9 @@
             <page-encoding>UTF-8</page-encoding>
         </jsp-property-group>
     </jsp-config>
+    <listener>
+        <listener-class>
+            es.tfg.atenea.core.jobs.QuartzInitializer
+        </listener-class>
+    </listener>
 </web-app>

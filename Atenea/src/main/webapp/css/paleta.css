@@ -151,6 +151,37 @@
     right: 5px;
     top: 75px;
 }
+
+.gamificacion{
+    float: right;
+    padding: 5px;
+    position: fixed;
+    left: 5px;
+    top: 75px;
+    z-index: 1000;
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+.insigniaCircular{
+    border-radius: 50%;
+    background-color:#FFF033;
+    border: 10px solid white;
+    position: relative;
+    box-sizing: border-box;
+}
+.insigniaCircular::after{
+    content: '';
+    position: absolute;
+    top: -12px; 
+    left: -12px; 
+    width: calc(100% + 24px); 
+    height: calc(100% + 24px);
+    border-radius: 50%; 
+    border: 2px solid #FFF033; 
+    box-sizing: border-box; 
+}
 .bloqueoExamen{
     position: fixed;
     top: 0;
