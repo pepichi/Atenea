@@ -44,7 +44,6 @@ public class ImportadorPreguntasPDFHelper {
         boolean inicioRespuesta = false;
         String pregunta = "";
         String respuesta = "";
-        int numeroPreguntas = 0;
         int indice = 1;
         for (String linea : lineas) {
             if (StringUtils.isEmptyOrWhitespaceOnly(linea) && inicioRespuesta) {

@@ -5,6 +5,7 @@
  */
 package es.tfg.atenea.core.importacion.aiken;
 
+import es.tfg.atenea.core.importacion.ConfiguracionImportacion;
 import es.tfg.atenea.core.banco.BloquePreguntaRespuestas;
 import es.tfg.atenea.core.banco.InsertarPreguntaBancoHelper;
 import es.tfg.atenea.core.constants.ResponseTypes;
@@ -35,7 +36,7 @@ public class ImportarPreguntasAikenServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try (Connection conexion = DataBaseHelper.getConexionTransacional()) {
-            ConfiguracionAiken configuracion = ServletHelper.getObjectFromPart(request, ConfiguracionAiken.class, NOMBRE_DATOS_PART);
+            ConfiguracionImportacion configuracion = ServletHelper.getObjectFromPart(request, ConfiguracionImportacion.class, NOMBRE_DATOS_PART);
             Part ficheroPart = request.getPart(NOMBRE_FICHERO_PART);
             String nombreFichero = FileHelper.getNombreFichero(ficheroPart);
             byte[] fichero = ficheroPart.getInputStream().readAllBytes();
