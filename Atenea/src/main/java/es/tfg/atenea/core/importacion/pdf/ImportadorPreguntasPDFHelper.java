@@ -34,7 +34,7 @@ public class ImportadorPreguntasPDFHelper {
 
     }
 
-    public static List<BloquePreguntaRespuestas> getBloquesPreguntasRespuestas(byte[] buffer, String nombreFichero, String patronEnunciado) {
+    public static List<BloquePreguntaRespuestas> getBloquesPreguntasRespuestas(byte[] buffer, String nombreFichero) {
         List<BloquePreguntaRespuestas> bloques = new ArrayList<>();
         String texto = extraerTextoDelPDF(buffer);
         List<String> lineas = Arrays.asList(texto.split(System.lineSeparator()));

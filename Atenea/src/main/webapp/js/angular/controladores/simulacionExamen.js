@@ -4,7 +4,7 @@
  * Permiso otorgado bajo la Licencia MIT
  */
 const CORRECTO = 'CORRECTO';
-var app = angular.module('simulacionExamenApp', ['ngDialog', 'ngDialogHelper']);
+var app = angular.module('simulacionExamenApp', ['ngDialog', 'ngDialogHelper', 'ngSanitize']);
 
 
 app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ngDialog) {

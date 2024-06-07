@@ -3,7 +3,7 @@
  *
  * Permiso otorgado bajo la Licencia MIT
  */
-package es.tfg.atenea.core.importacion.pdf;
+package es.tfg.atenea.core.importacion.xml;
 
 import es.tfg.atenea.core.banco.BloquePreguntaRespuestas;
 import es.tfg.atenea.core.banco.InsertarPreguntaBancoHelper;
@@ -25,11 +25,10 @@ import java.util.List;
  *
  * @author José Puerta Cardelles
  */
-@WebServlet(name = "ImportardorPreguntasPDFServlet", urlPatterns = {"/Servlet/ImportardorPreguntasPDFServlet"})
+@WebServlet(name = "ImportadorPreguntasXMLServlet", urlPatterns = {"/Servlet/ImportadorPreguntasXMLServlet"})
 @MultipartConfig
-public class ImportardorPreguntasPDFServlet extends HttpServlet {
-
-    private static final String ERROR_IMPORTACION = "Ha ocurrido un error durante el proceso de importación PDF.";
+public class ImportadorPreguntasXMLServlet extends HttpServlet{
+        private static final String ERROR_IMPORTACION = "Ha ocurrido un error durante el proceso de importación XML.";
     private static final String NOMBRE_FICHERO_PART = "file";
     private static final String NOMBRE_DATOS_PART = "datos";
 
@@ -40,7 +39,7 @@ public class ImportardorPreguntasPDFServlet extends HttpServlet {
             Part ficheroPart = request.getPart(NOMBRE_FICHERO_PART);
             String nombreFichero = FileHelper.getNombreFichero(ficheroPart);
             byte[] fichero = ficheroPart.getInputStream().readAllBytes();
-            List<BloquePreguntaRespuestas> bloques = ImportadorPreguntasPDFHelper.getBloquesPreguntasRespuestas(fichero, nombreFichero);
+            List<BloquePreguntaRespuestas> bloques = ImportadorPreguntasXMLHelper.getBloquesPreguntasRespuestas(fichero, nombreFichero);
             InsertarPreguntaBancoHelper.insertarBloques(conexion, bloques, configuracion.getCategorias());
             conexion.commit();
             ServletHelper.responseObject(ResponseTypes.CORRECTO, response);
