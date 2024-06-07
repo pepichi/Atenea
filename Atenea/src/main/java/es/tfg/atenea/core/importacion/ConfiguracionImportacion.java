@@ -3,7 +3,7 @@
  *
  * Permiso otorgado bajo la Licencia MIT
  */
-package es.tfg.atenea.core.importacion.aiken;
+package es.tfg.atenea.core.importacion;
 
 import es.tfg.atenea.core.categoria.Categoria;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author José Puerta Cardelles
  */
-public class ConfiguracionAiken {
+public class ConfiguracionImportacion {
     
     private String patron;
     private List<Categoria> categorias;

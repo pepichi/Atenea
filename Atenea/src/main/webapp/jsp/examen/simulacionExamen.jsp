@@ -60,13 +60,16 @@
         <div ng-show="inicioExamen" style="padding-left: 15%;padding-right: 15%;font-size: x-large">
             <div id="countdown" class="reloj">{{countdown}}</div>
             <div ng-repeat="item in examen">
-                <div style="padding-top: 15px;">
+                <div style="padding-top: 15px; display: inline-flex;">
                     <span style="font-weight: bold;">Pregunta {{$index + 1}}:</span>
-                    {{item.pregunta.enunciado}}
+                    <span ng-bind-html="item.pregunta.enunciado" style="padding-left: 10px;"></span>
                 </div>
                 <div ng-repeat="respuestaPregunta in item.respuestas">
-                    <input type="checkbox" name="{{item.pregunta.idPregunta}}" id="{{respuestaPregunta.idRespuesta}}" ng-model="seleccion" ng-click="actualizarSeleccion(item.pregunta.idPregunta, respuestaPregunta.idRespuesta)"><span id="s{{respuestaPregunta.idRespuesta}}">  {{respuestaPregunta.respuesta}}</span>
-                    <span id="f{{respuestaPregunta.idRespuesta}}" class="feedback" >{{respuestaPregunta.feedback}}</span>
+                    <div style="display: flex;align-items: baseline;">
+                        <input type="checkbox" name="{{item.pregunta.idPregunta}}" id="{{respuestaPregunta.idRespuesta}}" ng-model="seleccion" ng-click="actualizarSeleccion(item.pregunta.idPregunta, respuestaPregunta.idRespuesta)">
+                        <span id="s{{respuestaPregunta.idRespuesta}}" ng-bind-html="respuestaPregunta.respuesta" style="padding-left: 10px;"></span>
+                    </div>
+                    <span id="f{{respuestaPregunta.idRespuesta}}" class="feedback" ng-bind-html="respuestaPregunta.feedback"></span>
                 </div>
             </div>
             <div style="height: 70px"></div>

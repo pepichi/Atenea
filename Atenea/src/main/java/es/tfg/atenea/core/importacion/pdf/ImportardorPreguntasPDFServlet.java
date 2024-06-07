@@ -11,7 +11,7 @@ import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.FileHelper;
 import es.tfg.atenea.core.helper.ServletHelper;
-import es.tfg.atenea.core.importacion.aiken.ConfiguracionAiken;
+import es.tfg.atenea.core.importacion.ConfiguracionImportacion;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -36,11 +36,11 @@ public class ImportardorPreguntasPDFServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try (Connection conexion = DataBaseHelper.getConexionTransacional()) {
-            ConfiguracionAiken configuracion = ServletHelper.getObjectFromPart(request, ConfiguracionAiken.class, NOMBRE_DATOS_PART);
+            ConfiguracionImportacion configuracion = ServletHelper.getObjectFromPart(request, ConfiguracionImportacion.class, NOMBRE_DATOS_PART);
             Part ficheroPart = request.getPart(NOMBRE_FICHERO_PART);
             String nombreFichero = FileHelper.getNombreFichero(ficheroPart);
             byte[] fichero = ficheroPart.getInputStream().readAllBytes();
-            List<BloquePreguntaRespuestas> bloques = ImportadorPreguntasPDFHelper.getBloquesPreguntasRespuestas(fichero, nombreFichero, configuracion.getPatron());
+            List<BloquePreguntaRespuestas> bloques = ImportadorPreguntasPDFHelper.getBloquesPreguntasRespuestas(fichero, nombreFichero);
             InsertarPreguntaBancoHelper.insertarBloques(conexion, bloques, configuracion.getCategorias());
             conexion.commit();
             ServletHelper.responseObject(ResponseTypes.CORRECTO, response);

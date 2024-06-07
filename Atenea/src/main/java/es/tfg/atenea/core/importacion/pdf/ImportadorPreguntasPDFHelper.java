@@ -34,7 +34,7 @@ public class ImportadorPreguntasPDFHelper {
 
     }
 
-    public static List<BloquePreguntaRespuestas> getBloquesPreguntasRespuestas(byte[] buffer, String nombreFichero, String patronEnunciado) {
+    public static List<BloquePreguntaRespuestas> getBloquesPreguntasRespuestas(byte[] buffer, String nombreFichero) {
         List<BloquePreguntaRespuestas> bloques = new ArrayList<>();
         String texto = extraerTextoDelPDF(buffer);
         List<String> lineas = Arrays.asList(texto.split(System.lineSeparator()));
@@ -44,7 +44,6 @@ public class ImportadorPreguntasPDFHelper {
         boolean inicioRespuesta = false;
         String pregunta = "";
         String respuesta = "";
-        int numeroPreguntas = 0;
         int indice = 1;
         for (String linea : lineas) {
             if (StringUtils.isEmptyOrWhitespaceOnly(linea) && inicioRespuesta) {
