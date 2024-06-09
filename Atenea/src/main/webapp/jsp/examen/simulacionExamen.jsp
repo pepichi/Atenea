@@ -61,7 +61,7 @@
             <div id="countdown" class="reloj">{{countdown}}</div>
             <div ng-repeat="item in examen">
                 <div style="padding-top: 15px; display: inline-flex;">
-                    <span style="font-weight: bold;">Pregunta {{$index + 1}}:</span>
+                    <span style="font-weight: bold; min-width: 160px;">Pregunta {{$index + 1}}:</span>
                     <span ng-bind-html="item.pregunta.enunciado" style="padding-left: 10px;"></span>
                 </div>
                 <div ng-repeat="respuestaPregunta in item.respuestas">
