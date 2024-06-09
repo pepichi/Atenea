@@ -17,14 +17,14 @@ public class ConfiguracionExamen {
 
     private enum Columnas {
         ID_CONFIGURACION_EXAMEN, NOMBRE_CONFIGURACION, NUMERO_PREGUNTAS, RESPUESTA_PREGUNTA,
-        MULTIRESPUESTA, LIMITE_TIEMPO, MOSTRAR_TIEMPO, MOSTRAR_FEEDBACK, MOSTRAR_INMEDIATAMENTE,
+        MULTIRRESPUESTA, LIMITE_TIEMPO, MOSTRAR_TIEMPO, MOSTRAR_FEEDBACK, MOSTRAR_INMEDIATAMENTE,
         USAR_TODAS_CATEGORIAS, CATEGORIAS_SELECCIONADAS_MISMO_PESO
     }
 
     private BigDecimal idConfiguracionExamen;
     private String nombreConfiguracion;
     private int numeroPreguntas;
-    private boolean multirespuesta;
+    private boolean multirrespuesta;
     private int respuestasXPregunta;
     private int tiempo;
     private boolean mostrarTiempo;
@@ -37,7 +37,7 @@ public class ConfiguracionExamen {
         idConfiguracionExamen = rs.getBigDecimal(Columnas.ID_CONFIGURACION_EXAMEN.name());
         nombreConfiguracion = rs.getString(Columnas.NOMBRE_CONFIGURACION.name());
         numeroPreguntas = rs.getInt(Columnas.NUMERO_PREGUNTAS.name());
-        multirespuesta = rs.getBoolean(Columnas.MULTIRESPUESTA.name());
+        multirrespuesta = rs.getBoolean(Columnas.MULTIRRESPUESTA.name());
         respuestasXPregunta = rs.getInt(Columnas.RESPUESTA_PREGUNTA.name());
         tiempo = rs.getInt(Columnas.LIMITE_TIEMPO.name());
         mostrarTiempo = rs.getBoolean(Columnas.MOSTRAR_TIEMPO.name());
@@ -71,12 +71,12 @@ public class ConfiguracionExamen {
         this.numeroPreguntas = numeroPreguntas;
     }
 
-    public boolean isMultirespuesta() {
-        return multirespuesta;
+    public boolean isMultirrespuesta() {
+        return multirrespuesta;
     }
 
-    public void setMultirespuesta(boolean multirespuesta) {
-        this.multirespuesta = multirespuesta;
+    public void setMultirrespuesta(boolean multirrespuesta) {
+        this.multirrespuesta = multirrespuesta;
     }
 
     public int getRespuestasXPregunta() {

@@ -43,7 +43,7 @@ public class CrearExamenServlet extends HttpServlet{
                                 GenerarExamenHelper.gerRespuestaCategoria(
                                         conexion, 
                                         pregunta.getIdPregunta(), 
-                                        configuracion.getConfiguracion().isMultirespuesta(), 
+                                        configuracion.getConfiguracion().isMultirrespuesta(), 
                                         configuracion.getConfiguracion().getRespuestasXPregunta())));
             }
             ServletHelper.responseObject(bloques,response);

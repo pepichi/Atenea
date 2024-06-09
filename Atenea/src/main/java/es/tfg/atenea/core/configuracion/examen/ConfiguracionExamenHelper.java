@@ -36,14 +36,14 @@ public class ConfiguracionExamenHelper {
     }
     
     public static BigDecimal guardarConfiguracionExamen(Connection conexion, ConfiguracionExamen configuracion) throws SQLException {
-        String sql = "INSERT INTO configuracion_examen (nombre_configuracion, numero_preguntas, respuesta_pregunta, multirespuesta, limite_tiempo, "
+        String sql = "INSERT INTO configuracion_examen (nombre_configuracion, numero_preguntas, respuesta_pregunta, multirrespuesta, limite_tiempo, "
                 + "mostrar_tiempo, mostrar_feedback, mostrar_inmediatamente, usar_todas_categorias, categorias_seleccionadas_mismo_peso) "
                 + "VALUES (?,?,?,?,?,?,?,?,?,?) ";
         try (PreparedStatement pst = conexion.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pst.setString(1, configuracion.getNombreConfiguracion());
             pst.setInt(2, configuracion.getNumeroPreguntas());
             pst.setInt(3, configuracion.getRespuestasXPregunta());
-            pst.setBoolean(4, configuracion.isMultirespuesta());
+            pst.setBoolean(4, configuracion.isMultirrespuesta());
             pst.setInt(5, configuracion.getTiempo());
             pst.setBoolean(6, configuracion.isMostrarTiempo());
             pst.setBoolean(7, configuracion.isMostrarFeedback());

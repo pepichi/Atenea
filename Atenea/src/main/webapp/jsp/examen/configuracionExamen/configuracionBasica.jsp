@@ -20,8 +20,8 @@
             <input id="respuestasPorPreguntaId" type="number" min="2" value="4"/>
         </div>
         <div class="contenedorElementoConfiguracionExamen">
-            <label for="multirespuestaId">Multirespuesta</label>
-            <input id="multirespuestaId" type="checkbox" />            
+            <label for="multirrespuestaId">Multirrespuesta</label>
+            <input id="multirrespuestaId" type="checkbox" />            
         </div>
     </body>
 </html>

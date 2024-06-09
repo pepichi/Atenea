@@ -90,7 +90,7 @@ angular.module('configuracionExamen').controller('AcordeonCtrl', function ($scop
             "configuracionExamen":
                     {"nombreConfiguracion": nombreConfiguracion,
                         "numeroPreguntas": document.getElementById('numeroPreguntasId').value,
-                        "multirespuesta": document.getElementById('multirespuestaId').checked,
+                        "multirrespuesta": document.getElementById('multirrespuestaId').checked,
                         "respuestasXPregunta": document.getElementById('respuestasPorPreguntaId').value,
                         "tiempo": $scope.getDuracionEnMinutos(),
                         "mostrarTiempo": document.getElementById('mostrarTiempoRestanteId').checked,

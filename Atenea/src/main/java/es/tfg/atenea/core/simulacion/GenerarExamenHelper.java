@@ -66,7 +66,7 @@ public class GenerarExamenHelper {
         return preguntas;
     }
     
-    public static List<Respuesta> gerRespuestaCategoria(Connection conexion, BigDecimal idPregunta, boolean esMultirespuesta, int numeroRespuestas)
+    public static List<Respuesta> gerRespuestaCategoria(Connection conexion, BigDecimal idPregunta, boolean esMultirrespuesta, int numeroRespuestas)
             throws SQLException, GenerarExamenException{
         List<Respuesta> respuestas = new ArrayList<>();
         Respuesta respuestaCorrecta = getRespuestaCorrecta(conexion, idPregunta);
@@ -74,7 +74,7 @@ public class GenerarExamenHelper {
             throw new GenerarExamenException(String.format("No existen ninguna respuesta correcta para la pregunta con el identificador: %s", idPregunta));
         }
         respuestas.add(respuestaCorrecta);
-        respuestas.addAll(esMultirespuesta ? 
+        respuestas.addAll(esMultirrespuesta ? 
                 getOtrasRespuestas(conexion, idPregunta, respuestaCorrecta.getIdRespuesta(), numeroRespuestas -1) : 
                 getRespuestasFalsas(conexion, idPregunta, numeroRespuestas));
         Collections.shuffle(respuestas);
