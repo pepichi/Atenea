@@ -18,8 +18,8 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ng
     $scope.tiempoLimite = null;
     $scope.tiempoInicioExamen = null;
     $scope.finExamen = false;
-    $scope.avisoColorIntermedio = 29;
-    $scope.avisoFinal = 28;
+    $scope.avisoColorIntermedio = 15;
+    $scope.avisoFinal = 5;
     $scope.datosGamificacion = null;
     $scope.existeTrofeo = false;
     $scope.estadisticas = null;
@@ -123,10 +123,10 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ng
     };
 
     $scope.actualizarSeleccion = function (idPregunta, idRespuesta) {
-        let multirespuesta = $scope.configuracionExamenSeleccionada.multirespuesta;
+        let multirrespuesta = $scope.configuracionExamenSeleccionada.multirrespuesta;
         let marcandoOpcion = document.getElementById(idRespuesta).checked;
         let indicePregunta = $scope.getIndicePregunta(idPregunta);
-        if (marcandoOpcion && !multirespuesta) {
+        if (marcandoOpcion && !multirrespuesta) {
             let respuestasPreguntas = document.getElementsByName(idPregunta);
             for (var i = 0; i < respuestasPreguntas.length; i++) {
                 respuestasPreguntas[i].checked = false;
@@ -147,7 +147,7 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ng
         if (indicePregunta === -1) {
             $scope.respuestasSeleccionadas.push({idPregunta: idPregunta, idRespuestas: [idRespuesta]});
         } else {
-            if (multirespuesta) {
+            if (multirrespuesta) {
                 let bloque = $scope.respuestasSeleccionadas[indicePregunta];
                 let indiceRespuesta = $scope.getIndiceRespuesta(idRespuesta, bloque.idRespuestas);
                 if (indiceRespuesta === -1) {
