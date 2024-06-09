@@ -147,4 +147,8 @@ angular.module('configuracionExamen').controller('AcordeonCtrl', function ($scop
             width: '600px',
             scope: $scope});
     };
+    
+    $scope.irAExamen = function(){
+      window.location.href = '/Atenea/jsp/examen/simulacionExamen.jsp';  
+    };
 });

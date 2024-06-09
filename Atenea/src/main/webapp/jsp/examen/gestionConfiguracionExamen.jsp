@@ -29,7 +29,7 @@
         <div class="botoneraConfiguracionExamen" >
             <button class="botonConfiguracionExamen" uib-tooltip="Volver al menú" tooltip-placement="top" ng-click="irAMenu()">Volver</button>
             <button class="botonConfiguracionExamen" ng-click="mostrarVentanaGuardar()">Guardar</button>
-            <button class="botonConfiguracionExamen">Realizar examen</button>
+            <button class="botonConfiguracionExamen" ng-click="irAExamen()">Realizar examen</button>
         </div>
     </body>
 </html>
