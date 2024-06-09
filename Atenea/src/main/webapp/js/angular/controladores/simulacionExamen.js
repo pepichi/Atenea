@@ -99,12 +99,10 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ng
     };
 
     $scope.decorarRespuesta = function (respuesta) {
-        if (respuesta.correcta && !document.getElementById(respuesta.idRespuesta).checked) {
-            document.getElementById('s' + respuesta.idRespuesta).style.color = '#FF0000';
+        if (respuesta.correcta) {
+            document.getElementById('s' + respuesta.idRespuesta).style.fontWeight = 'bold';
         } else if (!respuesta.correcta && document.getElementById(respuesta.idRespuesta).checked) {
             document.getElementById('s' + respuesta.idRespuesta).style.color = '#FF0000';
-        } else if (respuesta.correcta && document.getElementById(respuesta.idRespuesta).checked) {
-            document.getElementById('s' + respuesta.idRespuesta).style.fontWeight = 'bold';
         }
         if (respuesta.feedback !== null) {
             document.getElementById('f' + respuesta.idRespuesta).style.display = 'block';
