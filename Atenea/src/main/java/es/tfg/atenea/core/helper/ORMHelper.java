@@ -11,9 +11,9 @@ public class ORMHelper {
     }
     
     public static GregorianCalendar getGregorianCalendar(ResultSet rs, String nombreColumna)throws SQLException{
-        GregorianCalendar calendar = rs.getDate(nombreColumna) == null ? null : new GregorianCalendar();
+        GregorianCalendar calendar = rs.getTimestamp(nombreColumna) == null ? null : new GregorianCalendar();
         if(calendar != null){
-            calendar.setTimeInMillis(rs.getDate(nombreColumna).getTime());
+            calendar.setTimeInMillis(rs.getTimestamp(nombreColumna).getTime());
         }
         return calendar;
     }

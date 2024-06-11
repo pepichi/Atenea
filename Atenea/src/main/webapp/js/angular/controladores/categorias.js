@@ -6,11 +6,25 @@
 
 angular.module('categoria', ['ngSanitize', 'ui.grid', 'ngTouch', 'ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav', 'ui.grid.selection']);
 
-angular.module('categoria').controller('categoriaController', function ($scope, $http, $q) {
+angular.module('categoria').filter('customDate', function () {
+    return function (input) {
+        let fecha = new Date(input.year, input.month - 1, input.dayOfMonth, input.hourOfDay, input.minute, input.second);
+        return moment(fecha).format('DD/MM/YYYY HH:mm:ss');
+    };
+});
+
+angular.module('categoria').controller('categoriaController', function ($scope, $http, $q, uiGridConstants) {
+
+
     $scope.gridOptions = {
         enableFiltering: true,
         enableRowSelection: true,
-        multiSelect: true
+        multiSelect: true,
+        columnDefs: [
+            {field: 'nombre', filters: [{condition: uiGridConstants.filter.CONTAINS}], displayName: "Nombre", cellTooltip: true},
+            {field: 'descripcion', filters: [{condition: uiGridConstants.filter.CONTAINS}], displayName: "Descripción", cellTooltip: true},
+            {field: 'fechaInsercion', filters: [{condition: uiGridConstants.filter.CONTAINS}], displayName: "Fecha inserción", cellTooltip: true, cellFilter: 'customDate', type: 'date'}
+        ]
     };
     $http({
         method: 'POST',
@@ -56,7 +70,7 @@ angular.module('categoria').controller('categoriaController', function ($scope, 
             var index = $scope.gridOptions.data.indexOf(row);
             $scope.gridOptions.data.splice(index, 1);
         });
-         var promise = $http({
+        var promise = $http({
             method: 'POST',
             url: '/Atenea/Servlet/BorrarCategoriaServlet',
             data: selectedRows,
