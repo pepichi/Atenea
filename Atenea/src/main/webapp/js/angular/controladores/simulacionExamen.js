@@ -71,7 +71,6 @@ app.controller('seleccionTipoExamenCtrl', function ($scope, $http, $interval, ng
             }
         }).then(function (response) {
             $scope.examen = response.data;
-            console.log($scope.examen);
             $scope.cargandoSimulacion = false;
             $scope.inicioExamen = true;
             $scope.configuracionExamenSeleccionada = $scope.getConfiguracionSeleccionada();

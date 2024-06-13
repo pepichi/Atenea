@@ -16,7 +16,7 @@ public class RespuestaHelper {
     
     public static List<Respuesta> getRespuestaPregunta(Connection conexion, BigDecimal idPregunta) throws SQLException{
         List<Respuesta> respuestas = new ArrayList<>();
-        String sql = "SELECT * FROM respuesta WHERE id_pregunta = ?";
+        String sql = "SELECT * FROM respuesta WHERE id_pregunta = ? ";
         try(PreparedStatement pst = conexion.prepareStatement(sql)){
             pst.setBigDecimal(1, idPregunta);
             try(ResultSet rs = pst.executeQuery()){

@@ -116,6 +116,27 @@
     cursor: pointer;
 }
 
+.tituloBancoPreguntas{
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+.numeracionRespuestaPregunta{
+    background-color: #8300ff;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.elementoPregunta{
+    margin-left: 15px;
+    font-weight: bold;
+}
+
 .warningImage{
     margin-top: 15px;
     width: 40px;
@@ -174,13 +195,13 @@
 .insigniaCircular::after{
     content: '';
     position: absolute;
-    top: -12px; 
-    left: -12px; 
-    width: calc(100% + 24px); 
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
     height: calc(100% + 24px);
-    border-radius: 50%; 
-    border: 2px solid #FFF033; 
-    box-sizing: border-box; 
+    border-radius: 50%;
+    border: 2px solid #FFF033;
+    box-sizing: border-box;
 }
 .bloqueoExamen{
     position: fixed;

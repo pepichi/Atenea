@@ -2,6 +2,7 @@ package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.constants.Errores;
 import es.tfg.atenea.core.constants.Parametros;
+import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.LogHelper;
 import es.tfg.atenea.core.helper.ServletHelper;
@@ -33,12 +34,17 @@ public class InsertarPreguntaBancoServlet extends HttpServlet {
         }
         JSONObject jsonObject = new JSONObject(jsonBody.toString());
         try (Connection conexion = DataBaseHelper.getConexionTransacional()) {
+            BigDecimal idPreguntaEliminar = new BigDecimal((Integer)jsonObject.get(Parametros.ID_PREGUNTA_ELIMINAR));
             InsertarPreguntaBancoHelper.insertarPreguntaYRespuestas(
                     conexion, 
                     new Pregunta((String) jsonObject.get(Parametros.ENUNCIADO), null, null), 
                     getIdsCategoriasSeleccionadas(jsonObject), 
                     getRespuestas(jsonObject));
+            if(idPreguntaEliminar.compareTo(BigDecimal.ZERO)>0){
+                PreguntaHelper.desactivarPregunta(conexion, idPreguntaEliminar);
+            }
             conexion.commit();
+            ServletHelper.responseObject(ResponseTypes.CORRECTO, response);
         } catch (Exception ex) {
             LogHelper.anotarExcepcionLog("Error al parsear la llamada a guardar la pregunta con sus respuestas.", ex);
             ServletHelper.responseObjectSafe(Errores.ERROR_GENERICO.getMensajeUsuario(), response);
@@ -60,7 +66,7 @@ public class InsertarPreguntaBancoServlet extends HttpServlet {
         List<Respuesta> respuestas = new ArrayList<>();
         jsonArrayCategorias.forEach(item -> {
             JSONObject jsonRespuesta = (JSONObject) item;
-            respuestas.add(new Respuesta(jsonRespuesta.getString("respuesta"), jsonRespuesta.getString("feedback"), jsonRespuesta.getBoolean("esCorrecta")));
+            respuestas.add(new Respuesta(jsonRespuesta.getString("respuesta"), jsonRespuesta.getString("feedback"), jsonRespuesta.getBoolean("correcta")));
         });
         return respuestas;
     }
