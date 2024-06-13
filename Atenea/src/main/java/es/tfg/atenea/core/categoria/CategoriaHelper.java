@@ -25,12 +25,12 @@ public class CategoriaHelper {
         }
         return categorias;
     }
-    
-    public static Categoria getCategoria(Connection conexion, BigDecimal idCategoria)throws SQLException{
+
+    public static Categoria getCategoria(Connection conexion, BigDecimal idCategoria) throws SQLException {
         String sql = "  SELECT * FROM categoria WHERE id_categoria = ? ";
-        try(PreparedStatement pst = conexion.prepareStatement(sql)){
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
             pst.setBigDecimal(1, idCategoria);
-            try(ResultSet rs = pst.executeQuery()){
+            try (ResultSet rs = pst.executeQuery()) {
                 return rs.next() ? new Categoria(rs) : null;
             }
         }
@@ -42,14 +42,14 @@ public class CategoriaHelper {
             return categoria;
         } else {
             return getCategoria(conexion, insertarCategoria(conexion, categoria));
-            
+
         }
     }
-    
-    public static void borrarCategorias(Connection conexion, List<Categoria> categorias)throws SQLException{
+
+    public static void borrarCategorias(Connection conexion, List<Categoria> categorias) throws SQLException {
         String sql = "  DELETE FROM categoria WHERE id_categoria = ? ";
-        try(PreparedStatement pst = conexion.prepareStatement(sql)){
-            for(Categoria categoria: categorias){
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
+            for (Categoria categoria : categorias) {
                 pst.setBigDecimal(1, categoria.getIdCategoria());
                 pst.addBatch();
             }
@@ -77,6 +77,25 @@ public class CategoriaHelper {
                 return rs.next() ? rs.getBigDecimal(1) : null;
             }
         }
+    }
+
+    public static List<Categoria> getCategoriasPregunta(Connection conexion, BigDecimal idPregunta) 
+            throws SQLException {
+        List<Categoria> categorias = new ArrayList<>();
+        String sql = "  SELECT      cat.* "
+                + "     FROM        pregunta_categoria pc "
+                + "     INNER JOIN  categoria cat "
+                + "     ON          cat.id_categoria = pc.id_categoria "
+                + "     WHERE       pc.id_pregunta = ? ";
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
+            pst.setBigDecimal(1, idPregunta);
+            try (ResultSet rs = pst.executeQuery()) {
+                while (rs.next()) {
+                    categorias.add(new Categoria(rs));
+                }
+            }
+        }
+        return categorias;
     }
 
 }

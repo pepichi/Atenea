@@ -15,4 +15,6 @@ public class Parametros {
     public static final String CATEGORIAS_SELECCIONADAS = "categoriasSeleccionadas";
     public static final String NOMBRE_CONFIGURACION = "nombreConfiguracion";
     public static final String CONFIGURACION = "configuracion";
+    public static final String ID_PREGUNTA = "idPregunta";
+    public static final String ID_PREGUNTA_ELIMINAR = "idPreguntaAEliminar";
 }

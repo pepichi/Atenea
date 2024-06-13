@@ -36,8 +36,8 @@ public class InsertarPreguntaBancoHelper {
                 + "     VALUES  (?,?,?) ";
         try (PreparedStatement pst = conexion.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pst.setString(1, pregunta.getEnunciado());
-            pst.setString(2, pregunta.getComentarios());
-            pst.setString(3, pregunta.getFuentePregunta());
+            pst.setString(2, pregunta.getFuentePregunta());
+            pst.setString(3, pregunta.getComentarios());
             pst.executeUpdate();
             try (ResultSet rs = pst.getGeneratedKeys()) {
                 return rs.next() ? rs.getBigDecimal(1) : null;

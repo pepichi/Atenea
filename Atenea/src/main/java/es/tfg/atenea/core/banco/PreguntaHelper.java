@@ -1,6 +1,7 @@
 package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.categoria.Categoria;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +19,7 @@ public class PreguntaHelper {
     
     public static List<Pregunta> getPreguntas(Connection conexion)throws SQLException{
         List<Pregunta> preguntas = new ArrayList<>();
-        String sql = "SELECT * FROM pregunta";
+        String sql = "SELECT * FROM pregunta WHERE activada = true order by enunciado ASC ";
         try(Statement stm = conexion.createStatement(); 
                 ResultSet rs = stm.executeQuery(sql)){
             while(rs.next()){
@@ -50,5 +51,11 @@ public class PreguntaHelper {
         return preguntas;        
     }
     
-    
+    public static void desactivarPregunta(Connection conexion, BigDecimal idPregunta)throws SQLException{
+        String sql = "  UPDATE pregunta SET activada = false WHERE id_pregunta = ? ";
+        try(PreparedStatement pst = conexion.prepareStatement(sql)){
+            pst.setBigDecimal(1, idPregunta);
+            pst.executeUpdate();
+        }
+    }
 }
