@@ -8,7 +8,7 @@ angular.module('categoria', ['ngSanitize', 'ui.grid', 'ngTouch', 'ui.grid.edit',
 
 angular.module('categoria').filter('customDate', function () {
     return function (input) {
-        let fecha = new Date(input.year, input.month - 1, input.dayOfMonth, input.hourOfDay, input.minute, input.second);
+        let fecha = new Date(input.year, input.month, input.dayOfMonth, input.hourOfDay, input.minute, input.second);
         return moment(fecha).format('DD/MM/YYYY HH:mm:ss');
     };
 });
