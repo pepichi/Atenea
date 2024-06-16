@@ -5,16 +5,16 @@
  */
 package es.tfg.atenea.core.importacion.aiken;
 
-import es.tfg.atenea.core.importacion.ConfiguracionImportacion;
 import es.tfg.atenea.core.banco.BloquePreguntaRespuestas;
 import es.tfg.atenea.core.banco.InsertarPreguntaBancoHelper;
 import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.FileHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
+import es.tfg.atenea.core.importacion.ConfiguracionImportacion;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
@@ -27,7 +27,7 @@ import java.util.List;
  */
 @WebServlet(name = "ImportarPreguntasAikenServlet", urlPatterns = {"/Servlet/ImportarPreguntasAikenServlet"})
 @MultipartConfig
-public class ImportarPreguntasAikenServlet extends HttpServlet {
+public class ImportarPreguntasAikenServlet extends ServletBase {
 
     private static final String ERROR_IMPORTACION = "Ha ocurrido un error durante el proceso de importación del método AIKEN";
     private static final String NOMBRE_FICHERO_PART = "file";

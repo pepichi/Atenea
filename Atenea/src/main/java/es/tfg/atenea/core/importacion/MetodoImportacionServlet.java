@@ -8,9 +8,9 @@ package es.tfg.atenea.core.importacion;
 import es.tfg.atenea.core.constants.Errores;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.LogHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
@@ -21,7 +21,7 @@ import java.sql.Connection;
  */
 
 @WebServlet(name = "MetodoImportacionServlet", urlPatterns = {"/Servlet/MetodoImportacionServlet"})
-public class MetodoImportacionServlet extends HttpServlet{
+public class MetodoImportacionServlet extends ServletBase{
 
     private static final String ERROR_CARGA_METODOS_IMPORTACION = "No se ha podido obtener los métodos de importación del sistema";
 

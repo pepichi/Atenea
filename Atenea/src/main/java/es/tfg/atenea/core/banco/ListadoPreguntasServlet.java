@@ -6,9 +6,9 @@
 package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.database.DataBaseHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.sql.Connection;
  * @author José Puerta Cardelles
  */
 @WebServlet(name = "ListadoPreguntasServlet", urlPatterns = {"/Servlet/ListadoPreguntasServlet"})
-public class ListadoPreguntasServlet extends HttpServlet {
+public class ListadoPreguntasServlet extends ServletBase {
     
     private static final String ERROR_MENSAJE_CARGANDO_PREGUNTAS = "Ha ocurrido un error cargando las preguntas disponibles.";
     
