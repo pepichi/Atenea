@@ -5,10 +5,10 @@ import es.tfg.atenea.core.constants.Parametros;
 import es.tfg.atenea.core.constants.Redirecciones;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.LogHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.objetcs.Interno;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Servlet/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+public class LoginServlet extends ServletBase {
 
     private static final String ERROR_MENSAJE_AUTENTICACION = "El usuario o la contraseña son incorrectos para usuario:%s, contraseña:%s";
     private static final String MENSAJE_AUTENTICACION_CORRECTA = "El usuario: %s, se ha autenticado correctamente";

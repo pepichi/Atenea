@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class LogHelper {
 
     private enum Nivel {
-        DEBUG(0), INFO(1), WARNING(2), ERROR(3), SEVERE(4);
+        RENDIMIENTO(-1), DEBUG(0), INFO(1), WARNING(2), ERROR(3), SEVERE(4);
 
         private final int valor;
 
@@ -38,6 +38,10 @@ public class LogHelper {
         anotarLog(mensaje, null, idUsuario, null, Nivel.INFO);
     }
 
+    public static void anotarRendimentoLog(String mensaje) {
+        anotarLog(mensaje, null, null, null, Nivel.RENDIMIENTO);
+    }
+    
     public static void anotarWarningLog(String mensaje) {
         anotarLog(mensaje, null, null, null, Nivel.WARNING);
     }

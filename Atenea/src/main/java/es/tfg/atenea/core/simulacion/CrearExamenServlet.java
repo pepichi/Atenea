@@ -9,10 +9,10 @@ import es.tfg.atenea.core.banco.BloquePreguntaRespuestas;
 import es.tfg.atenea.core.banco.Pregunta;
 import es.tfg.atenea.core.constants.Parametros;
 import es.tfg.atenea.core.database.DataBaseHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -26,7 +26,7 @@ import java.util.List;
  * @author José Puerta Cardelles
  */
 @WebServlet(name = "CrearExamenServlet", urlPatterns = {"/Servlet/CrearExamenServlet"})
-public class CrearExamenServlet extends HttpServlet{
+public class CrearExamenServlet extends ServletBase{
     private static final String ERROR = "Ha ocurrido un error generando la simulación de examen para la configuración: %s";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

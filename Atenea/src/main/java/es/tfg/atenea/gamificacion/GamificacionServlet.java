@@ -6,10 +6,10 @@
 package es.tfg.atenea.gamificacion;
 
 import es.tfg.atenea.core.database.DataBaseHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import java.sql.Connection;
  * @author José Puerta Cardelles
  */
 @WebServlet(name = "GamificacionServlet", urlPatterns = {"/Servlet/GamificacionServlet"})
-public class GamificacionServlet extends HttpServlet{
+public class GamificacionServlet extends ServletBase{
     
     private static final String ERROR_CARGANDO_DATOS_GAMIFICACION = "Ha ocurrido un error cargando los datos de gamificación asociada al usuario";
         @Override

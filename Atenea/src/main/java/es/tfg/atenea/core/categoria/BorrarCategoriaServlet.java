@@ -6,10 +6,10 @@ package es.tfg.atenea.core.categoria;
 
 import com.google.gson.reflect.TypeToken;
 import es.tfg.atenea.core.database.DataBaseHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -23,7 +23,7 @@ import java.util.List;
 
 
 @WebServlet(name = "BorrarCategoriaServlet", urlPatterns = {"/Servlet/BorrarCategoriaServlet"})
-public class BorrarCategoriaServlet  extends HttpServlet {
+public class BorrarCategoriaServlet  extends ServletBase {
     private static final String ERROR_BORRANDO_CATEGORIAS = "Se ha producido un error borrando las categorías";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

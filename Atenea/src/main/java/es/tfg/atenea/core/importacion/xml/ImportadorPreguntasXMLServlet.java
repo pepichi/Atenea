@@ -10,11 +10,11 @@ import es.tfg.atenea.core.banco.InsertarPreguntaBancoHelper;
 import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.FileHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import es.tfg.atenea.core.importacion.ConfiguracionImportacion;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
@@ -27,7 +27,7 @@ import java.util.List;
  */
 @WebServlet(name = "ImportadorPreguntasXMLServlet", urlPatterns = {"/Servlet/ImportadorPreguntasXMLServlet"})
 @MultipartConfig
-public class ImportadorPreguntasXMLServlet extends HttpServlet{
+public class ImportadorPreguntasXMLServlet extends ServletBase{
         private static final String ERROR_IMPORTACION = "Ha ocurrido un error durante el proceso de importación XML.";
     private static final String NOMBRE_FICHERO_PART = "file";
     private static final String NOMBRE_DATOS_PART = "datos";

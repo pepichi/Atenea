@@ -5,9 +5,9 @@ import es.tfg.atenea.core.constants.Parametros;
 import es.tfg.atenea.core.constants.ResponseTypes;
 import es.tfg.atenea.core.database.DataBaseHelper;
 import es.tfg.atenea.core.helper.LogHelper;
+import es.tfg.atenea.core.helper.ServletBase;
 import es.tfg.atenea.core.helper.ServletHelper;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 @WebServlet(name = "InsertarPreguntaBancoServlet", urlPatterns = {"/Servlet/InsertarPreguntaBancoServlet"})
-public class InsertarPreguntaBancoServlet extends HttpServlet {
+public class InsertarPreguntaBancoServlet extends ServletBase {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
