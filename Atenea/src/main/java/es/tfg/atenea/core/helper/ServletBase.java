@@ -21,7 +21,7 @@ public abstract class ServletBase extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp)throws ServletException,IOException {
-        long tiempoInicio = System.currentTimeMillis();;
+        long tiempoInicio = System.currentTimeMillis();
         super.service(req, resp);
         long tiempoFinal = System.currentTimeMillis();
         LogHelper.anotarRendimentoLog(String.format(MENSAJE_RENDIMIENTO, req.getRequestURI(), tiempoFinal - tiempoInicio));
