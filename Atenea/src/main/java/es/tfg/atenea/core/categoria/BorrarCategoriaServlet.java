@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
  */
 package es.tfg.atenea.core.categoria;
 
@@ -18,10 +19,8 @@ import java.util.List;
 
 /**
  *
- * @author Pepichi
+ * @author José Puerta Cardelles
  */
-
-
 @WebServlet(name = "BorrarCategoriaServlet", urlPatterns = {"/Servlet/BorrarCategoriaServlet"})
 public class BorrarCategoriaServlet  extends ServletBase {
     private static final String ERROR_BORRANDO_CATEGORIAS = "Se ha producido un error borrando las categorías";

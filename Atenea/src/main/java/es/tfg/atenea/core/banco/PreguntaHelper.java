@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.categoria.Categoria;
@@ -11,6 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class PreguntaHelper {
     
     private PreguntaHelper(){

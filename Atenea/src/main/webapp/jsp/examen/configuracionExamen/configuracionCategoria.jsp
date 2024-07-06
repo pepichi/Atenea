@@ -1,7 +1,9 @@
 <%-- 
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
     Document   : configuracionCategoria
-    Created on : 1 may 2024, 18:46:25
-    Author     : Pepichi
+    Created on : 1 may 2024, 17:31:22
+    Author     : José Puerta Cardelles
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

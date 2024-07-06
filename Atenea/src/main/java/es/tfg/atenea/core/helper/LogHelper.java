@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.helper;
 
 import es.tfg.atenea.core.database.DataBaseHelper;
@@ -6,6 +11,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class LogHelper {
 
     private enum Nivel {

@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.helper;
 
 import com.google.gson.Gson;
@@ -13,6 +18,10 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import org.json.JSONObject;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class ServletHelper {
 
     private ServletHelper() {

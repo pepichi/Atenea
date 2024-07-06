@@ -1,3 +1,11 @@
+<%-- 
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
+    Document   : metodoImportacion
+    Created on : 1 may 2024, 17:31:22
+    Author     : José Puerta Cardelles
+--%>
+
 <!DOCTYPE html>
 <html lang="es" ng-app="metodoImportacionApp">
     <head>

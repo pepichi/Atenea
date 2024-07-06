@@ -1,8 +1,11 @@
 <%-- 
-    Document   : pdf
-    Created on : 5 jun 2024, 18:45:00
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
+    Document   : xml
+    Created on : 1 may 2024, 17:31:22
     Author     : José Puerta Cardelles
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es" ng-app="xmlApp">

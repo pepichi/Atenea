@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.helper.ORMHelper;
@@ -7,6 +12,10 @@ import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class Pregunta {
     
     private enum Columnas{

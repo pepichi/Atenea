@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 
 const CORRECTO = 'CORRECTO';
 var gestionPreguntas = angular.module('gestionPreguntas', ['textAngular', 'ngSanitize', 'ngDialog', 'ngDialogHelper']);

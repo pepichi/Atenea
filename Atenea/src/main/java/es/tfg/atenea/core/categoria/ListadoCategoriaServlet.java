@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.categoria;
 
 import es.tfg.atenea.core.database.DataBaseHelper;
@@ -10,6 +15,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 @WebServlet(name = "ListadoCategoriaServlet", urlPatterns = {"/Servlet/ListadoCategoriaServlet"})
 public class ListadoCategoriaServlet extends ServletBase {
     

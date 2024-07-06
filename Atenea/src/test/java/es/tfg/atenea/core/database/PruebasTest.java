@@ -1,12 +1,13 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
  */
 package es.tfg.atenea.core.database;
 
 /**
  *
- * @author Pepichi
+ * @author José Puerta Cardelles
  */
 public class PruebasTest {
     

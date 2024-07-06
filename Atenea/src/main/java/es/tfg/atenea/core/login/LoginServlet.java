@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.login;
 
 import es.tfg.atenea.core.constants.Atributos;
@@ -15,6 +20,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Connection;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Servlet/LoginServlet"})
 public class LoginServlet extends ServletBase {
 
