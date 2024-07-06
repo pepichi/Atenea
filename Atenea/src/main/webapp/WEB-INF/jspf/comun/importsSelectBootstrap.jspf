@@ -1,0 +1,12 @@
+<%-- 
+    Copyright 2024 José Puerta Cardelles    
+
+    Permiso otorgado bajo la Licencia MIT
+
+    Author:  José Puerta Cardelles
+    Created: 5 abril 2024
+--%>
+<script src = "/Atenea/js/jquery/jquery-3.7.1.min.js"></script>
+<script src = "/Atenea/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src = "/Atenea/js/bootstrap/bootstrap-select.min.js"></script>
+<link rel="stylesheet" href="/Atenea/css/bootstrap/bootstrap-select.min.css">

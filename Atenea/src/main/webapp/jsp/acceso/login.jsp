@@ -1,0 +1,20 @@
+<%-- 
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
+    Document   : login
+    Created on : 1 may 2024, 17:31:22
+    Author     : José Puerta Cardelles
+--%>
+
+<!DOCTYPE html>
+<html lang="es">
+    <form action="/Atenea/Servlet/LoginServlet" method="post" ua-error="error-msg">
+        <input name="nombreUsuario" placeholder="Nombre de usuario" required><br>
+        <input name="password" placeholder="Contraseña" type="password" required><br>
+        <button type="submit">Enviar</button>
+        <p id="error-msg"></p>
+        <% if ("01".equals( request.getParameter("mensaje"))) { %>
+        <p>"El usuario o la contraseña son incorrectos"</p>
+        <% }%>
+    </form>
+</html>
