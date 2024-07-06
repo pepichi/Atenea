@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.banco;
 
 import es.tfg.atenea.core.constants.Errores;
@@ -20,6 +25,10 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 @WebServlet(name = "InsertarPreguntaBancoServlet", urlPatterns = {"/Servlet/InsertarPreguntaBancoServlet"})
 public class InsertarPreguntaBancoServlet extends ServletBase {
 

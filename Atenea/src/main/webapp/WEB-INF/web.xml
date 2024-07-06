@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Copyright 2024 José Puerta Cardelles    
+
+    Permiso otorgado bajo la Licencia MIT
+
+    Author:  José Puerta Cardelles
+    Created: 5 abril 2024
+-->
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
 
     <descripcion>Aplicación de gestión de test</descripcion>

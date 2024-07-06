@@ -1,9 +1,18 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.login;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class Usuario {
     
     private BigDecimal idUsuario;

@@ -1,5 +1,14 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.constants;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public enum Errores {
     ERROR_NO_AUTENTICADO("01", "Usuario no autenticado"),
     ERROR_GENERICO("E00", "Error: Ha ocurrido un error realizando la operación");

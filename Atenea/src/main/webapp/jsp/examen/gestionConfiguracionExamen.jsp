@@ -1,7 +1,9 @@
 <%-- 
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
     Document   : gestionConfiguracionExamen
-    Created on : 30 abr 2024, 21:03:49
-    Author     : Pepichi
+    Created on : 1 may 2024, 17:31:22
+    Author     : José Puerta Cardelles
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

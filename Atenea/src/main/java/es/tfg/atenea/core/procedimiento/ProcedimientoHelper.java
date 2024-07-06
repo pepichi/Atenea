@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.procedimiento;
 
 import java.sql.Connection;
@@ -7,6 +12,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 public class ProcedimientoHelper {
 
     private ProcedimientoHelper() {

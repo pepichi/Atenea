@@ -1,3 +1,8 @@
+/*
+ * Copyright 2024 José Puerta Cardelles
+ *
+ * Permiso otorgado bajo la Licencia MIT
+ */
 package es.tfg.atenea.core.procedimiento;
 
 import es.tfg.atenea.core.constants.Errores;
@@ -10,6 +15,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 
+/**
+ *
+ * @author José Puerta Cardelles
+ */
 @WebServlet(name = "ProcedimientoServlet", urlPatterns = {"/Servlet/ProcedimientoServlet"})
 public class ProcedimientoServlet extends ServletBase {
 

@@ -1,8 +1,11 @@
 <%-- 
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
     Document   : simulacionExamen
-    Created on : 19 may 2024, 11:33:21
+    Created on : 1 may 2024, 17:31:22
     Author     : José Puerta Cardelles
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es" ng-app="simulacionExamenApp">

@@ -1,6 +1,8 @@
 <%-- 
-    Document   : estadisticasSimulacion.jsp
-    Created on : 5 jun 2024, 17:51:47
+    Copyright 2024 José Puerta Cardelles
+    Permiso otorgado bajo la Licencia MIT
+    Document   : estadisticasSimulacion
+    Created on : 1 may 2024, 17:31:22
     Author     : José Puerta Cardelles
 --%>
 
