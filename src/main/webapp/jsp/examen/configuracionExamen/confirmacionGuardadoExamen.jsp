@@ -21,7 +21,7 @@
         </div>
         <div class="botoneraConfiguracionExamen" style="position: absolute">
             <button class="botonConfiguracionExamen" uib-tooltip="Cerrar ventana" tooltip-placement="top" ng-click="closeThisDialog()">Cancelar</button>
-            <button class="botonConfiguracionExamen" ng-click="guardarPlantilla(nombreConfiguracion)"  ng-disabled="!nombreConfiguracion" ng-show="nombreConfiguracion">Guardar</button>
+            <button class="botonConfiguracionExamen" ng-click="guardarPlantilla(nombreConfiguracion)"  ng-disabled="!nombreConfiguracion" ng-show="nombreConfiguracion" id="confirmacionGuardadoPlantillaId">Guardar</button>
         </div>
     </body>
 </html>
