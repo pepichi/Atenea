@@ -17,7 +17,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/Atenea/jsp/acceso/login.jsp</welcome-file>
+        <welcome-file>jsp/menu/frontal.jsp</welcome-file>
     </welcome-file-list>
     <jsp-config>
         <jsp-property-group>

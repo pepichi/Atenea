@@ -1,9 +1,9 @@
 <%-- 
-    Copyright 2024 José Puerta Cardelles
+    Copyright 2024 JosÃ© Puerta Cardelles
     Permiso otorgado bajo la Licencia MIT
     Document   : frontal
     Created on : 1 may 2024, 17:31:22
-    Author     : José Puerta Cardelles
+    Author     : JosÃ© Puerta Cardelles
 --%>
 
 <!DOCTYPE html>
